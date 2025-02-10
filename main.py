@@ -77,6 +77,10 @@ async def consultar_documentos(id_universidad: int):
     documentos = cursor.fetchall()
     return {"documentos": documentos}
 
+@app.get("/")
+async def root():
+    return {"message": "Bienvenido al sistema de gestión de documentos de FHSP"}
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
