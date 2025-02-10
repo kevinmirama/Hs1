@@ -84,7 +84,7 @@ async def root():
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://hs2-4k5j.vercel.app/"],  # Reemplaza con la URL de tu frontend
+    allow_origins=["https://hs2-4k5j.vercel.app/"],  # Reemplaza con lac URL de tu frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
