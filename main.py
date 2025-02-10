@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from typing import List
 import sqlite3
 import datetime
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
@@ -80,6 +81,15 @@ async def consultar_documentos(id_universidad: int):
 @app.get("/")
 async def root():
     return {"message": "Bienvenido al sistema de gestión de documentos de FHSP"}
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://hs2-4k5j.vercel.app/"],  # Reemplaza con la URL de tu frontend
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 if __name__ == "__main__":
     import uvicorn
