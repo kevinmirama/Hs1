@@ -82,7 +82,13 @@ async def consultar_documentos(id_universidad: int):
 async def root():
     return {"message": "Bienvenido al sistema de gestión de documentos de FHSP"}
 
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Permite todas las origins en desarrollo
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 if __name__ == "__main__":
