@@ -82,13 +82,7 @@ async def consultar_documentos(id_universidad: int):
 async def root():
     return {"message": "Bienvenido al sistema de gestión de documentos de FHSP"}
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["https://hs2-4k5j.vercel.app/"],  # Reemplaza con lac URL de tu frontend
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+
 
 
 if __name__ == "__main__":
